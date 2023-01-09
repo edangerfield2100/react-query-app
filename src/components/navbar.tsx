@@ -10,10 +10,10 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/movie-details">Movie Details</Link>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <Link to="/nothing-here">Nothing Here</Link>
+            <Link to="/nothing-here">Invalid Route</Link>
           </li>
         </ul>
       </nav>
