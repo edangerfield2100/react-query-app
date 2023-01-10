@@ -12,7 +12,7 @@ function Home() {
     queryFn: () => axios.get(MOVIE_API_URL).then((res) => res.data),
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isFetching) return <div className="m-8 text-center">Fetch data...</div>;
 
   if (error) return <div>An error has occurred</div>;
 
