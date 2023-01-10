@@ -7,7 +7,6 @@ function MovieDetails() {
 
   const movieId = location.state.id;
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=4a3b711b&i=${movieId}`;
-  console.log(MOVIE_API_URL);
 
   const { isLoading, error, data, isFetching } = useQuery({
     queryKey: [`movie-${movieId}`],
@@ -15,9 +14,9 @@ function MovieDetails() {
   });
 
   return (
-    <div>
+    <div className="flex justify-center">
       {data && (
-        <div className="m-8 border-2 w-2/4 flex justify-between">
+        <div className="m-8 border-2 flex justify-between sm:w-2/3 shadow-xl">
           <div className="p-4">
             <div>Title: {data["Title"]}</div>
             <div>Year: {data["Year"]}</div>

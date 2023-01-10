@@ -21,7 +21,7 @@ const Movie = ({ movie }: { movie: MovieInterface }) => {
   return (
     <div className="mt-8">
       <h2 className="font-bold text-center">{movie.Title}</h2>
-      <div className="cursor-pointer">
+      <div className="flex justify-center cursor-pointer">
         <img
           width="200"
           alt={`The movie titled: ${movie.Title}`}

@@ -4,7 +4,7 @@ import Router from "./routing/router";
 function App() {
   return (
     <div>
-      <h1>Welcome</h1>
+      <h1 className="mt-4 text-4xl text-center">Movie Database</h1>
       <Router></Router>
     </div>
   );

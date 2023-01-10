@@ -5,15 +5,15 @@ function Navbar() {
   return (
     <div>
       <nav>
-        <ul>
-          <li>
+        <ul className="my-4 sm:flex sm:justify-center">
+          <li className="w-32 m-2 btn border-2 border-purple-800 mr-4 text-center hover:bg-purple-800 hover:text-white transition ease-out duration-300">
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/about">About Us</Link>
+          <li className="w-32 m-2 btn border-2 border-purple-800 mr-4 text-center hover:bg-purple-800 hover:text-white transition ease-out duration-300">
+            <Link to="/about">About</Link>
           </li>
-          <li>
-            <Link to="/nothing-here">Invalid Route</Link>
+          <li className="w-32 m-2 btn border-2 border-purple-800 text-center hover:bg-purple-800 hover:text-white transition ease-out duration-300">
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </nav>

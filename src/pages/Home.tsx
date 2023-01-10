@@ -30,7 +30,7 @@ function Home() {
   );
 
   return (
-    <div className="flex justify-around">
+    <div className="sm:flex sm:justify-around">
       {filteredResults.map((movie: MovieInterface, index: number) => {
         return <Movie key={`${index}`} movie={movie} />;
       })}
