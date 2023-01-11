@@ -1,4 +1,5 @@
 import React from "react";
+import { RouterProvider } from "react-router";
 import { useAppContext } from "./hooks";
 import Router from "./routing/router";
 
@@ -10,7 +11,10 @@ function App() {
       <h1 className="mt-4 text-4xl text-center">
         Welcome {user.firstName} to the Movie Database
       </h1>
-      <Router></Router>
+      <RouterProvider router={Router} />
+      {/* implementation for BrowserRouter (replaced w/ RouterProvider)
+        <Router></Router> 
+      */}
     </div>
   );
 }
