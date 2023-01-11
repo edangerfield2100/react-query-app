@@ -31,7 +31,10 @@ export default function RootLayout() {
         </button>
         <hr />
       </header>
-      <Outlet />
+
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
