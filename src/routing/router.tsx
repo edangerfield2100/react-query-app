@@ -4,8 +4,8 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import RootLayout from "../components/layouts/rootLayout";
 
-import Navbar from "../components/navbar";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
@@ -19,7 +19,7 @@ import Search from "../pages/Search";
 // function Router() {
 //   return (
 //     <Routes>
-//       <Route path="/" element={<Navbar />}>
+//       <Route path="/" element={<RootLayout />}>
 //         <Route index element={<Home />} />
 //         <Route path="movie-details/:movieId" element={<MovieDetails />} />
 //         <Route path="about" element={<About />} />
@@ -35,13 +35,13 @@ import Search from "../pages/Search";
 // Implementation when using RouterProvider
 const Router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Navbar />}>
+    <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="movie-details/:movieId" element={<MovieDetails />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="search" element={<Search />} />
       <Route path="profile" element={<Profile />} />
+      <Route path="search" element={<Search />} />
       <Route path="*" element={<NoMatch />} />
     </Route>
   )
