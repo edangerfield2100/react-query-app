@@ -4,10 +4,12 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import HelpLayout from "../components/layouts/helpLayout";
 import RootLayout from "../components/layouts/rootLayout";
 
 import About from "../pages/About";
-import Contact from "../pages/Contact";
+import Faq from "../pages/help/Faq";
+import Contact from "../pages/help/Contact";
 import Home from "../pages/Home";
 import MovieDetails from "../pages/MovieDetails";
 import NoMatch from "../pages/NoMatch";
@@ -39,7 +41,10 @@ const Router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="movie-details/:movieId" element={<MovieDetails />} />
       <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
+      <Route path="help" element={<HelpLayout />}>
+        <Route path="faq" element={<Faq />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
       <Route path="profile" element={<Profile />} />
       <Route path="search" element={<Search />} />
       <Route path="*" element={<NoMatch />} />
