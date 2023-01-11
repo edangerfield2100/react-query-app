@@ -1,11 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 function MovieDetails() {
-  const location = useLocation();
-
-  const movieId = location.state.id;
+  const { movieId } = useParams();
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=4a3b711b&i=${movieId}`;
 
   const { isLoading, error, data, isFetching } = useQuery({

@@ -27,7 +27,7 @@ const Movie = ({ movie }: { movie: MovieInterface }) => {
           alt={`The movie titled: ${movie.Title}`}
           src={mvPoster}
           onClick={() => {
-            navigate("/movie-details", { state: { id: `${movie.imdbID}` } });
+            navigate(`/movie-details/${movie.imdbID}`);
           }}
         />
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Movie, { MovieInterface } from "../components/movie";
@@ -7,10 +8,12 @@ import Movie, { MovieInterface } from "../components/movie";
 function Home() {
   const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
 
-  const { isLoading, error, data, isFetching } = useQuery({
+  const { error, data, isFetching } = useQuery({
     queryKey: ["movies"],
     queryFn: () => axios.get(MOVIE_API_URL).then((res) => res.data),
   });
+
+  let navigate = useNavigate();
 
   if (isFetching) return <div className="m-8 text-center">Fetch data...</div>;
 
@@ -30,10 +33,22 @@ function Home() {
   );
 
   return (
-    <div className="sm:flex sm:justify-around">
-      {filteredResults.map((movie: MovieInterface, index: number) => {
-        return <Movie key={`${index}`} movie={movie} />;
-      })}
+    <div>
+      <div className="sm:flex sm:justify-around">
+        {filteredResults.map((movie: MovieInterface, index: number) => {
+          return <Movie key={`${index}`} movie={movie} />;
+        })}
+      </div>
+      <div className="mt-12 flex justify-center">
+        <button
+          className="w-32 m-2 btn border-2 border-purple-800 mr-4 text-center hover:bg-purple-800 hover:text-white"
+          onClick={() => {
+            navigate("/search");
+          }}
+        >
+          Search
+        </button>
+      </div>
     </div>
   );
 }
