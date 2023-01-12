@@ -2,7 +2,12 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-function MovieDetails() {
+/*
+  Implement MovieDetails component w/ API call for movie,
+  invoked in component, via React Query.
+*/
+
+function MovieDetailsV1() {
   const { movieId } = useParams();
   const MOVIE_API_URL = `https://www.omdbapi.com/?apikey=4a3b711b&i=${movieId}`;
 
@@ -32,4 +37,4 @@ function MovieDetails() {
   );
 }
 
-export default MovieDetails;
+export default MovieDetailsV1;

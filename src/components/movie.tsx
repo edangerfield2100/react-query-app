@@ -12,7 +12,13 @@ export type MovieInterface = {
 const DEFAULT_PLACEHOLDER_IMAGE =
   "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
 
-const Movie = ({ movie }: { movie: MovieInterface }) => {
+const Movie = ({
+  movie,
+  routeName,
+}: {
+  movie: MovieInterface;
+  routeName: string;
+}) => {
   const navigate = useNavigate();
 
   const mvPoster =
@@ -27,7 +33,7 @@ const Movie = ({ movie }: { movie: MovieInterface }) => {
           alt={`The movie titled: ${movie.Title}`}
           src={mvPoster}
           onClick={() => {
-            navigate(`/movie-details/${movie.imdbID}`);
+            navigate(`/${routeName}/${movie.imdbID}`);
           }}
         />
       </div>

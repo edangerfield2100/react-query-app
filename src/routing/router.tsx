@@ -11,10 +11,12 @@ import About from "../pages/About";
 import Faq from "../pages/help/Faq";
 import Contact from "../pages/help/Contact";
 import Home from "../pages/Home";
-import MovieDetails from "../pages/MovieDetails";
 import NoMatch from "../pages/NoMatch";
 import Profile from "../pages/Profile";
 import Search from "../pages/Search";
+import MovieDetailsV1 from "../pages/MovieDetailsV1";
+import MovieDetailsV2, { MovieDetailsV2Loader } from "../pages/MovieDetailsV2";
+import MovieDetailsV3, { MovieDetailsV3Loader } from "../pages/MovieDetailsV3";
 
 // Implementation when using BrowserRouter
 //
@@ -39,7 +41,17 @@ const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="movie-details/:movieId" element={<MovieDetails />} />
+      <Route path="movie-details-v1/:movieId" element={<MovieDetailsV1 />} />
+      <Route
+        path="movie-details-v2/:movieId"
+        element={<MovieDetailsV2 />}
+        loader={MovieDetailsV2Loader}
+      />
+      <Route
+        path="movie-details-v3/:movieId"
+        element={<MovieDetailsV3 />}
+        loader={MovieDetailsV3Loader}
+      />
       <Route path="about" element={<About />} />
       <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />
