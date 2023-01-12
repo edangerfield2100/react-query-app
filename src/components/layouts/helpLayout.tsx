@@ -11,9 +11,19 @@ export default function HelpLayout() {
         exercitationem deleniti. Veritatis, tenetur. Possimus unde eos dolor eum
         vero accusantium officia!
       </p>
-      <nav className="mt-4">
-        <NavLink to="faq">FAQs</NavLink>
-        <NavLink to="contact">Contact Us</NavLink>
+      <nav className="my-8 flex justify-center">
+        <NavLink
+          to="faq"
+          className="w-32 btn border-2 border-purple-800 mr-4 text-center hover:bg-purple-800 hover:text-white"
+        >
+          FAQs
+        </NavLink>
+        <NavLink
+          to="contact"
+          className="w-32 btn border-2 border-purple-800 mr-4 text-center hover:bg-purple-800 hover:text-white"
+        >
+          Contact Us
+        </NavLink>
       </nav>
       <hr />
       <Outlet />
