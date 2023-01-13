@@ -4,7 +4,7 @@ import axios from "axios";
 
 /* 
    Implement MovieDetails component w/o Api call for movie.
-   API call is made from loader, in route configuration and exposed 
+   API call is made from loader (via Fetch API), in route configuration and exposed 
    via useDataLoader hook.
 */
 

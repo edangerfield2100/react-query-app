@@ -101,7 +101,8 @@ function Home() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Example: Fetch API request in route loader
+              Example: Obtain movie details via Fetch API request in route
+              loader
             </button>
           </h2>
           <div
@@ -150,7 +151,8 @@ function Home() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Example: Fetch API request in route loader, utilizing 'defer'
+              Example: Obtain movie details via Fetch API request in route
+              loader, utilizing 'defer'
             </button>
           </h2>
           <div
@@ -199,7 +201,8 @@ function Home() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Example: Nest React Query API request in MovieDetails component
+              Example: Obtain movie details via React Query API request in
+              MovieDetails component
             </button>
           </h2>
           <div
@@ -223,6 +226,58 @@ function Home() {
             </div>
           </div>
         </div>
+        {/*  */}
+        <div className="pb-5 accordion-item bg-white border border-gray-400">
+          <h2 className="accordion-header mb-0" id="headingFour">
+            <button
+              className="
+        accordion-button
+        collapsed
+        relative
+        flex
+        items-center
+        w-full
+        py-4
+        px-5
+        text-base text-gray-800 text-left
+        bg-white
+        border-0
+        rounded-none
+        transition
+        focus:outline-none
+      "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              Example: Obtain movie details via React Query API request in route
+              loader
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample"
+          >
+            <div>
+              <div className="sm:flex sm:justify-around">
+                {filteredResults.map((movie: MovieInterface, index: number) => {
+                  return (
+                    <Movie
+                      key={`${index}`}
+                      movie={movie}
+                      routeName="movie-details-v4"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*  */}
       </div>
     </div>
   );

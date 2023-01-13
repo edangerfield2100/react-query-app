@@ -17,6 +17,9 @@ import Search from "../pages/Search";
 import MovieDetailsV1 from "../pages/MovieDetailsV1";
 import MovieDetailsV2, { MovieDetailsV2Loader } from "../pages/MovieDetailsV2";
 import MovieDetailsV3, { MovieDetailsV3Loader } from "../pages/MovieDetailsV3";
+import MovieDetailsV4, { MovieDetailsV4Loader } from "../pages/MovieDetailsV4";
+
+import { queryClient } from "../providers";
 
 // Implementation when using BrowserRouter
 //
@@ -51,6 +54,11 @@ const Router = createBrowserRouter(
         path="movie-details-v3/:movieId"
         element={<MovieDetailsV3 />}
         loader={MovieDetailsV3Loader}
+      />
+      <Route
+        path="movie-details-v4/:movieId"
+        element={<MovieDetailsV4 />}
+        loader={MovieDetailsV4Loader(queryClient)}
       />
       <Route path="about" element={<About />} />
       <Route path="help" element={<HelpLayout />}>

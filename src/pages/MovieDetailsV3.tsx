@@ -1,7 +1,5 @@
-import { Await, defer, useLoaderData, useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import React from "react";
+import { Await, defer, useLoaderData } from "react-router-dom";
 
 /* 
    Implement MovieDetails component w/o Api call for movie.
