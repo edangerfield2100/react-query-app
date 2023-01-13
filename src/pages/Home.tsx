@@ -8,10 +8,13 @@ import Movie, { MovieInterface } from "../components/movie";
 function Home() {
   const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
 
-  const { error, data, isFetching } = useQuery({
+  // define query
+  const movieQuery = () => ({
     queryKey: ["movies"],
     queryFn: () => axios.get(MOVIE_API_URL).then((res) => res.data),
   });
+
+  const { error, data, isFetching } = useQuery(movieQuery());
 
   let navigate = useNavigate();
 
@@ -126,6 +129,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         <div className="pb-5 accordion-item bg-white border border-gray-400">
           <h2 className="accordion-header mb-0" id="headingTwo">
             <button
@@ -176,6 +180,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         <div className="pb-5 accordion-item bg-white border border-gray-400">
           <h2 className="accordion-header mb-0" id="headingThree">
             <button
@@ -226,7 +231,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/*  */}
+
         <div className="pb-5 accordion-item bg-white border border-gray-400">
           <h2 className="accordion-header mb-0" id="headingFour">
             <button
@@ -277,7 +282,57 @@ function Home() {
             </div>
           </div>
         </div>
-        {/*  */}
+
+        <div className="pb-5 accordion-item bg-white border border-gray-400">
+          <h2 className="accordion-header mb-0" id="headingFive">
+            <button
+              className="
+        accordion-button
+        collapsed
+        relative
+        flex
+        items-center
+        w-full
+        py-4
+        px-5
+        text-base text-gray-800 text-left
+        bg-white
+        border-0
+        rounded-none
+        transition
+        focus:outline-none
+      "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              Example: Obtain movie details via React Query API request in route
+              loader, utilizing 'defer'
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample"
+          >
+            <div>
+              <div className="sm:flex sm:justify-around">
+                {filteredResults.map((movie: MovieInterface, index: number) => {
+                  return (
+                    <Movie
+                      key={`${index}`}
+                      movie={movie}
+                      routeName="movie-details-v5"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
