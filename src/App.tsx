@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider } from "react-router";
 import { useAppContext } from "./hooks";
 import Router from "./routing/router";
 
 function App() {
-  const { user } = useAppContext();
+  const { user, setUser } = useAppContext();
+
+  useEffect(() => {
+    setUser({ firstName: "Joe", lastName: "Smith" });
+  }, []);
 
   return (
     <div>
