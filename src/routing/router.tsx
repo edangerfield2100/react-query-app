@@ -21,6 +21,7 @@ import MovieDetailsV4, { MovieDetailsV4Loader } from "../pages/MovieDetailsV4";
 
 import { queryClient } from "../providers";
 import MovieDetailsV5, { MovieDetailsV5Loader } from "../pages/MovieDetailsV5";
+import ErrorPage from "../pages/Error";
 
 // Implementation when using BrowserRouter
 //
@@ -64,6 +65,7 @@ const Router = createBrowserRouter(
         path="movie-details-v4/:movieId"
         element={<MovieDetailsV4 />}
         loader={MovieDetailsV4Loader(queryClient)}
+        errorElement={<ErrorPage />}
       />
       {/* React Query in loader w/ defer */}
       <Route

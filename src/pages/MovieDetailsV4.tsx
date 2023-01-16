@@ -48,9 +48,24 @@ export const MovieDetailsV4Loader =
   (queryClient: any) =>
   async ({ params }: { params: any }) => {
     const query = movieDetailsQuery(params.movieId);
-    // return data from cache (if available), otherwise fetch to populate cache
-    return (
-      queryClient.getQueryData(query.queryKey) ??
-      (await queryClient.fetchQuery(query))
-    );
+
+    // check cache
+    const data = queryClient.getQueryData(query.queryKey);
+
+    if (!data) {
+      // data not cached, thus fetch
+      const response = await queryClient.fetchQuery(query);
+      if (response.Error) {
+        // handle error response
+        throw Error(
+          `Details for movie ID: ${params.movieId} are not available.`
+        );
+      }
+    }
+    return null;
+
+    // return (
+    //   queryClient.getQueryData(query.queryKey) ??
+    //   (await queryClient.fetchQuery(query))
+    // );
   };
