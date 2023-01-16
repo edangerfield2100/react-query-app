@@ -46,28 +46,28 @@ const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      {/* React Query in component */}
+      {/* React Query request in component */}
       <Route path="movie-details-v1/:movieId" element={<MovieDetailsV1 />} />
-      {/* Fetch via loader */}
+      {/* Fetch request in loader */}
       <Route
         path="movie-details-v2/:movieId"
         element={<MovieDetailsV2 />}
         loader={MovieDetailsV2Loader}
       />
-      {/* Fetch via loader w/ defer */}
+      {/* Fetch request in loader w/ defer */}
       <Route
         path="movie-details-v3/:movieId"
         element={<MovieDetailsV3 />}
         loader={MovieDetailsV3Loader}
       />
-      {/* React Query in loader */}
+      {/* React Query request in loader */}
       <Route
         path="movie-details-v4/:movieId"
         element={<MovieDetailsV4 />}
         loader={MovieDetailsV4Loader(queryClient)}
         errorElement={<ErrorPage />}
       />
-      {/* React Query in loader w/ defer */}
+      {/* React Query request in loader w/ defer */}
       <Route
         path="movie-details-v5/:movieId"
         element={<MovieDetailsV5 />}
