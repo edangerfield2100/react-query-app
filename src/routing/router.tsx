@@ -9,7 +9,7 @@ import RootLayout from "../components/layouts/rootLayout";
 
 import About from "../pages/About";
 import Faq from "../pages/help/Faq";
-import Contact from "../pages/help/Contact";
+import Contact, { contactAction } from "../pages/help/Contact";
 import Home from "../pages/Home";
 import NoMatch from "../pages/NoMatch";
 import Profile from "../pages/Profile";
@@ -75,7 +75,7 @@ const Router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} action={contactAction} />
       </Route>
       <Route path="profile" element={<Profile />} />
       <Route path="search" element={<Search />} />
