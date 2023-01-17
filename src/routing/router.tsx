@@ -18,10 +18,9 @@ import MovieDetailsV1 from "../pages/MovieDetailsV1";
 import MovieDetailsV2, { MovieDetailsV2Loader } from "../pages/MovieDetailsV2";
 import MovieDetailsV3, { MovieDetailsV3Loader } from "../pages/MovieDetailsV3";
 import MovieDetailsV4, { MovieDetailsV4Loader } from "../pages/MovieDetailsV4";
-
-import { queryClient } from "../providers";
 import MovieDetailsV5, { MovieDetailsV5Loader } from "../pages/MovieDetailsV5";
 import ErrorPage from "../pages/Error";
+import { queryClient } from "../providers";
 
 // Implementation when using BrowserRouter
 //

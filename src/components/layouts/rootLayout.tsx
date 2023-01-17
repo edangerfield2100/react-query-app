@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import { useAppContext } from "../../hooks";
 import Navbar from "../navbar";
 
 export default function RootLayout() {
   const navigate = useNavigate();
+  const { user, setUser } = useAppContext();
+
+  useEffect(() => {
+    setUser({ firstName: "Joe", lastName: "Smith" });
+  }, []);
+
   return (
     <div>
       <header>
+        <h1 className="mt-4 text-4xl text-center">
+          Welcome {user.firstName} to the Movie Database
+        </h1>
         <Navbar />
         <button
           className="hidden md:block mt-4 md:absolute md:right-4 md:top-0 w-9"
